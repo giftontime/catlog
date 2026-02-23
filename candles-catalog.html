@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Candles Collection | Gift On Time Dubai</title>
+  <style>
+    /* ===== BRAND COLORS ===== */
+    :root {
+      --primary-1: #E72F6C;
+      --primary-2: #81314B;
+      --secondary-1: #F4F4F4;
+      --secondary-2: #FF73A0;
+      --secondary-3: #B14366;
+      --secondary-4: #68273C;
+      --text-dark: #2d2d2d;
+      --text-light: #ffffff;
+    }
+
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--secondary-1);
+      color: var(--text-dark);
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      line-height: 1.5;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      background: linear-gradient(135deg, var(--primary-1), var(--primary-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-1), var(--secondary-2));
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 5%;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      transition: transform 0.3s;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary-2);
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-1);
+    }
+
+    /* ===== CATEGORY HEADER ===== */
+    .category-header {
+      background: linear-gradient(135deg, rgba(231,47,108,0.1), rgba(129,49,75,0.1));
+      padding: 3rem 0;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .category-header p {
+      font-size: 1.2rem;
+      color: var(--secondary-4);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: var(--primary-1);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== PRODUCT GRID ===== */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px -10px rgba(231,47,108,0.3);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 1.5rem;
+    }
+
+    .product-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-2);
+    }
+
+    .product-price {
+      color: var(--primary-1);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-desc {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .product-tag {
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      background: var(--secondary-2);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .inquiry-btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: linear-gradient(135deg, var(--primary-1), var(--secondary-3));
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .inquiry-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== FILTER BAR ===== */
+    .filter-bar {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--primary-1);
+      background: transparent;
+      color: var(--primary-1);
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary-1);
+      color: white;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--secondary-4);
+      color: white;
+      padding: 2rem 5%;
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links a {
+        margin: 0 1rem;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">
+      <img src="GOT Full Logo.png" alt="Gift On Time" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <span style="display: none; font-size: 1.8rem; color: var(--primary-1);">Gift n Time</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#collections">Collections</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Category Header -->
+  <div class="category-header">
+    <div class="container">
+      <a href="index.html#collections" class="back-link">← Back to Collections</a>
+      <h1>Premium Candles Collection</h1>
+      <p>Hand-poured with love in Dubai • 100% soy wax • Premium fragrances</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Filter Options -->
+    <div class="filter-bar">
+      <button class="filter-btn active">All Candles</button>
+      <button class="filter-btn">Scented</button>
+      <button class="filter-btn">Unscented</button>
+      <button class="filter-btn">Festive</button>
+      <button class="filter-btn">Corporate</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="https://placehold.co/600x800/F4F4F4/E72F6C?text=Vanilla+Dream" alt="Vanilla Scented Candle" class="product-img">
+        <div class="product-info">
+          <h3 class="product-title">Vanilla Dream</h3>
+          <div class="product-price">AED 89</div>
+          <p class="product-desc">Warm vanilla bean with hints of caramel. 45hr burn time.</p>
+          <span class="product-tag">Scented</span>
+          <span class="product-tag">40+ hrs</span>
+          <div>
+            <a href="#contact" class="inquiry-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="https://placehold.co/600x800/F4F4F4/81314B?text=Lavender+Mist" alt="Lavender Candle" class="product-img">
+        <div class="product-info">
+          <h3 class="product-title">Lavender Mist</h3>
+          <div class="product-price">AED 95</div>
+          <p class="product-desc">Calming lavender with essential oils. Perfect for relaxation.</p>
+          <span class="product-tag">Scented</span>
+          <span class="product-tag">Essential Oils</span>
+          <div>
+            <a href="#contact" class="inquiry-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="https://placehold.co/600x800/F4F4F4/FF73A0?text=Citrus+Fresh" alt="Citrus Candle" class="product-img">
+        <div class="product-info">
+          <h3 class="product-title">Citrus Fresh</h3>
+          <div class="product-price">AED 85</div>
+          <p class="product-desc">Energizing blend of orange, lemon and grapefruit.</p>
+          <span class="product-tag">Scented</span>
+          <span class="product-tag">Energizing</span>
+          <div>
+            <a href="#contact" class="inquiry-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <img src="https://placehold.co/600x800/F4F4F4/B14366?text=Oud+Majesty" alt="Oud Candle" class="product-img">
+        <div class="product-info">
+          <h3 class="product-title">Oud Majesty</h3>
+          <div class="product-price">AED 129</div>
+          <p class="product-desc">Premium Arabian oud with woody notes. 50hr burn time.</p>
+          <span class="product-tag">Luxury</span>
+          <span class="product-tag">50+ hrs</span>
+          <div>
+            <a href="#contact" class="inquiry-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 - Corporate -->
+      <div class="product-card">
+        <img src="https://placehold.co/600x800/F4F4F4/68273C?text=Corporate+Collection" alt="Corporate Candle Set" class="product-img">
+        <div class="product-info">
+          <h3 class="product-title">Corporate Gift Set</h3>
+          <div class="product-price">Custom Quote</div>
+          <p class="product-desc">Branded candles with your logo. Perfect for client gifts.</p>
+          <span class="product-tag">Custom Logo</span>
+          <span class="product-tag">Bulk Order</span>
+          <div>
+            <a href="#contact" class="inquiry-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 - Festive -->
+      <div class="product-card">
+        <img src="https://placehold.co/600x800/F4F4F4/E72F6C?text=Ramadan+Special" alt="Ramadan Candle" class="product-img">
+        <div class="product-info">
+          <h3 class="product-title">Ramadan Special</h3>
+          <div class="product-price">AED 115</div>
+          <p class="product-desc">Dates and frankincense scent. Festive packaging included.</p>
+          <span class="product-tag">Festive</span>
+          <span class="product-tag">Limited Edition</span>
+          <div>
+            <a href="#contact" class="inquiry-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Gift On Time. All rights reserved. | Dubai's premier handmade gifting brand</p>
+  </footer>
+
+  <!-- Simple Filter Script -->
+  <script>
+    // This is a placeholder for filter functionality
+    // You can expand this based on your needs
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        // Add your filtering logic here
+      });
+    });
+  </script>
+</body>
+</html>
